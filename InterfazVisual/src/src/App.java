@@ -21,7 +21,6 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseListener;
 
 
@@ -71,6 +70,7 @@ public class App extends JFrame{
         setVisible(true);
 
     }
+    
 
     private void componentes_panel_1(){ //Panel principal
         panel1 = new JPanel();
@@ -105,9 +105,6 @@ public class App extends JFrame{
         AreaTexto.append("\nEscribe otra cosa: ");
         panel2.add(AreaTexto);
 
-
-
-  
         panel2.setLayout(null);
         panel1.add(panel2);
     }
@@ -145,7 +142,7 @@ public class App extends JFrame{
         CajaArchivos.setBorder(null);
 
         panel3.setLayout(null);
-         BotonPuntos.setBorder(null);
+        BotonPuntos.setBorder(null);
         BotonPuntos.setFocusPainted(false);
         panel3.add(textoExplorer);
         panel3.add(BotonPuntos);
@@ -352,16 +349,22 @@ public class App extends JFrame{
         panel5.setBounds(0,0,1200,30);
         Color colorFondo = new Color(50, 50, 50);
         panel5.setBackground(colorFondo);
+
+        //logo 
+        ImageIcon logovisual = new ImageIcon("MiniProyecto2/InterfazVisual/logovisual_mini-removebg-preview.png");
+        JLabel logo = new JLabel();
+        logo.setBounds(10, 5, 20, 20);
+        logo.setIcon(new ImageIcon(logovisual.getImage().getScaledInstance(25, 20, Image.SCALE_SMOOTH)));
+      
         //Boton 6
         boton6 = new JButton("File");
         boton6.setBounds(40, 5, 30, 20);
         Color colorFondoBoton = new Color(125,  125, 125);
+        Color colorFondo2 = new Color(100,100,100);
         boton6.setForeground(colorFondoBoton);
         boton6.setBackground(colorFondo);
         boton6.setBorder(null);
-        boton6.setFocusPainted(false); 
-        //Creacion de la accion del boton
-        Color colorFondo2 = new Color(100,100,100);
+        boton6.setFocusPainted(false);
         //Boton 7
         boton7 = new JButton("Edit");
         boton7.setBounds(75, 5, 30, 20);
@@ -458,6 +461,7 @@ public class App extends JFrame{
         panel5.add(boton13);
         panel5.add(BotonFlechaDerecha);
         panel5.add(BotonFlechaIzquierda);
+        panel5.add(logo);
         panel1.add(panel5);
     }
 
